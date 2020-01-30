@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+{% for article in all_articles_list %}
+<section>
+<h3><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h3>
+<article>
+  <img src="{{ article.photo.url }}" alt="{{ article.title }}" class="art-img">
+<p>{{ article.text|linebreaks }}</p>
+</article>
+</section>
+{% endfor %}
+</main>
+{% endblock content %}

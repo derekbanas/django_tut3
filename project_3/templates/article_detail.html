@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+  <section>
+    <h3>{{ article.title }}</h3>
+    <article>
+      <img src="{{ article.photo.url }}" alt="{{ article.title }}" class="art-img">
+      <p>{{ article.text|linebreaks }}</p>
+    </article>
+    <a href="{% url 'article_edit' article.pk %}" class="btn btn-primary btn-bg">Edit Article</a>
+    <a href="{% url 'article_delete' article.pk %}" class="btn btn-primary btn-bg">Delete Article</a>
+  </section>
+</main>
+{% endblock content %}
